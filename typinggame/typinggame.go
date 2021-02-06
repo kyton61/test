@@ -11,6 +11,7 @@ const timelimit = 30
 
 var correctAnsNum = 0
 var animals = [10]string{"cat", "dog", "pigeion", "giraffe", "rat", "snake", "lion", "rhinoceros", "peacock", "flamingo"}
+var countires = [10]string{"japan", "america", "china", "russia", "korea", "australia", "hungary", "brazil", "sweden", "turkey"}
 
 // assert recieve error type and if reciever have error, print error message and exit function
 func assert(err error) {
@@ -24,7 +25,7 @@ func sendQuestion(chqes chan<- string, chans <-chan int) {
 	for {
 		<-chans
 		i := rand.Int() % 10
-		question := animals[i]
+		question := countries[i]
 		chqes <- question
 	}
 }
